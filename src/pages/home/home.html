@@ -1,14 +1,123 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color = "primary">
     <ion-title>
-      Ionic Blank
+    EGHL
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Merchant Name</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-label floating>Amount</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Customer Name</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-label floating>Service ID</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Currency</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-label floating>Token</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Token Type</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+             <ion-label>Transaction Type</ion-label>
+             <ion-select [(ngModel)]="transactionType">
+               <ion-option value="SALE">SALE</ion-option>
+               <ion-option value="AUTH">AUTH</ion-option>
+             </ion-select>
+           </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+             <ion-label>Payment Method</ion-label>
+             <ion-select [(ngModel)]="paymentMethod">
+               <ion-option value="ANY">ANY</ion-option>
+               <ion-option value="CC">CC</ion-option>
+               <ion-option value="DD">DD</ion-option>
+             </ion-select>
+           </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Prod Host</ion-label>
+              <ion-checkbox checked="false"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <button full ion-button>Masterpass</button>
+          </ion-col>
+          <ion-col>
+              <button full ion-button>Checkout</button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>The below transactions will apply to the last payment that has occured.</ion-label>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+              <button full ion-button>Capture</button>
+          </ion-col>
+          <ion-col>
+              <button full ion-button>Query</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-list>
 </ion-content>
