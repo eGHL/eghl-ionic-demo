@@ -11,12 +11,12 @@
 
       <ion-item>
         <ion-label floating>Merchant Name</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input  [(ngModel)]="merchantName" type="text" value=""></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
       </ion-item>
 
       <ion-grid>
@@ -24,13 +24,13 @@
           <ion-col>
               <ion-item>
                 <ion-label floating>Amount</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input [(ngModel)]="amount" type="text"></ion-input>
               </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label floating>Customer Name</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input [(ngModel)]="customerName" type="text"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -38,13 +38,13 @@
           <ion-col>
               <ion-item>
                 <ion-label floating>Service ID</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input [(ngModel)]="serviceId" type="text"></ion-input>
               </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label floating>Currency</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input [(ngModel)]="currency" type="text"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -52,13 +52,13 @@
           <ion-col>
               <ion-item>
                 <ion-label floating>Token</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input  [(ngModel)]="token" type="text"></ion-input>
               </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label floating>Token Type</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input  [(ngModel)]="tokenType" type="text"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -87,13 +87,13 @@
           <ion-col>
             <ion-item>
               <ion-label>Prod Host</ion-label>
-              <ion-checkbox checked="false"></ion-checkbox>
+              <ion-checkbox  [(ngModel)]="isProd" checked="false"></ion-checkbox>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label floating>Password</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input  [(ngModel)]="password" type="text"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -102,7 +102,7 @@
               <button full ion-button>Masterpass</button>
           </ion-col>
           <ion-col>
-              <button full ion-button>Checkout</button>
+              <button full ion-button (click)="checkout()">Checkout</button>
           </ion-col>
         </ion-row>
           <ion-item>
