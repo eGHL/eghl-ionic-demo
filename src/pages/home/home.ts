@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,AlertController } from 'ionic-angular';
 
 declare var eGHL :any;
 
@@ -24,7 +24,8 @@ export class HomePage {
   isProd:any;
   password:any;
 
-  constructor(public navCtrl: NavController) {
+
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController) {
     this.merchantName = "GHL ePayment";
     this.email = "somebody@somesite.com";
     this.amount = "1.00";
@@ -38,9 +39,34 @@ export class HomePage {
     this.isProd = false;
     this.password = "sit12345";
 
-   
-  
+
+
   }
+
+   handleSuccess(message) {
+     console.log("result "+message);
+     let alertBody = {  title: 'Payment Result',  buttons: ['Dismiss']};
+     if(message==0){
+        alertBody = {
+          ...alertBody,
+          subTitle: "Payment Success! Result code: "+ message,
+
+        }
+
+     }else{
+       alertBody = {
+         ...alertBody,
+         subTitle: "Payment Failed! Result code: "+ message,
+       }
+
+
+     }
+
+     let alert = this.alertCtrl.create(alertBody);
+
+     alert.present();
+  }
+
   checkout(){
     var paymentGateway = ""
     if(this.isProd){
@@ -121,13 +147,11 @@ export class HomePage {
       sdkTimeout: 60, // seconds
       // _finaliseMessage: "Optional message for Finalising Payment (iOS Only)",
       // _cancelMessage: "Optional message for Cancelling Payment (iOS Only)"
-  },function(result){
-    console.log("result "+result);
-  },function(error){
+  },this.handleSuccess.bind(this),function(error){
     console.log("error "+error);
 
   });
 
-  }  
+  }
 
 }
