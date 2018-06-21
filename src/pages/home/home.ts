@@ -93,7 +93,7 @@ export class HomePage {
 
     eGHL.makePayment({
       CurrencyCode : this.currency,
-      PaymentMethod :this.paymentMethod,
+      PymtMethod :this.paymentMethod,
       TransactionType : this.transactionType,
       PaymentGateway: paymentGateway, // Payment gateway URL given by eGHL
       ServiceID :this.serviceId, //Merchant Code or Service ID given by eGHL
